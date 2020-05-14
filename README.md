@@ -1,26 +1,16 @@
 ## spfx-codespaces
 
-This is where you include your WebPart documentation.
+Repo to demonstrate the `.devcontainer` configuration for SPFx projects in Visual Studio Codespaces.
 
-### Building the code
+### Configuration files
 
-```bash
-git clone the repo
-npm i
-npm i -g gulp
-gulp
+[Configuring the codespace](https://docs.microsoft.com/en-us/visualstudio/online/reference/configuring) is accomplished via JSON files/scripts. This repository uses the folder approach.
+
+```
+workspace 
+├── .devcontainer
+│   ├── devcontainer.json
+│   ├── spfx-setup.sh
 ```
 
-This package produces the following:
-
-* lib/* - intermediate-stage commonjs build artifacts
-* dist/* - the bundled script, along with other resources
-* deploy/* - all resources which should be uploaded to a CDN.
-
-### Build options
-
-gulp clean - TODO
-gulp test - TODO
-gulp serve - TODO
-gulp bundle - TODO
-gulp package-solution - TODO
+The JSON file contains a reference to the script, which is run as a `postCreateCommand`.
